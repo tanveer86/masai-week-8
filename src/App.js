@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Link, BrowserRouter } from "react-router-dom";
+import Offers from './components/Offers';
+import Header from './components/Header';
+import AddBikes from './components/admin/AddBikes';
+import Home from './components/Home';
+import AllBikes from './components/AllBikes';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {
+      selectBike: '',
+    }
+  }
+
+  getAllBikes = (e) => {
+    console.log(e)
+  }
+
+  render(){
+    return (
+      <BrowserRouter>
+        <Offers />
+        
+        <Route path="/" exact component={Home} />
+        <Route path="/addbikes" component={AddBikes} />
+        <Route path="/allbikes" component={AllBikes} />
+        </BrowserRouter>
+    );
+  }
 }
 
 export default App;
