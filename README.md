@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## For our week 8 project I have designed bike rental website which has admin and user option.
 
-![Image ](https://i.ibb.co/47Gn3Bs/screencapture-localhost-3000-2019-09-28-01-15-09.png)
+![Image ](https://i.ibb.co/YbB6Xj0/screencapture-localhost-3000-2019-09-28-22-55-47.png)
 
 ## Available Scripts
 
