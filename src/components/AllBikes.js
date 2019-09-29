@@ -1,19 +1,18 @@
 import React from 'react';
+import { Route, Link, BrowserRouter } from "react-router-dom";
 
-function AllBikes(){
+function AllBikes(props){
 
-    let bikesBest = JSON.parse(localStorage.getItem('bikes'));
-
-    let bestBikes = bikesBest.map(eachBest => 
+    let showAllBikes = props.showbikes.map(eachBest => 
         
         <div class="col-3 mt-3 text-center">
             <div class="card p-2" >
                 <img src={eachBest.bikeImage} class="card-img-top" alt={eachBest.bikeName} title={eachBest.bikeName} />
                 <div class="card-body">
                     <h5 class="card-title">{eachBest.bikeName}</h5>
-                    <p class="card-text font-weight-bold">Rs. {eachBest.bikePrice}</p>
+                    <p class="card-text font-weight-bold">Per Day: Rs. {eachBest.bikePrice}</p>
                     <p class="card-text">Location: {eachBest.bikeLocation}</p>
-                    <button class="btn btn-danger">Rent This Bike</button>
+                    <Link to={`${props.match.url}/${eachBest.bikeName}`}><button class="btn btn-danger">Rent This Bike</button></Link>
                 </div>
             </div>
         </div>);
@@ -27,7 +26,7 @@ function AllBikes(){
                     </div>
                 </div>
                 <div class="row">
-                    {bestBikes}
+                    {showAllBikes}
                 </div>
             </div>
         </React.Fragment>

@@ -32,7 +32,7 @@ function Header(){
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label class="font-weight-bold">Drop Date</label>
-                                            <input type="date" class="form-control" placeholder="Select Drop Date" />
+                                            <input type="date" class="form-control" />
                                         </div>
                                     </div>
                                     <div class="col-12">

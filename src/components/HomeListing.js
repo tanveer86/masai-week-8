@@ -1,10 +1,9 @@
 import React from 'react';
-
-let bikesBest = JSON.parse(localStorage.getItem('bikes'));
+import { Route, Link, BrowserRouter } from "react-router-dom";
 
 function HomeListing(props){
 
-    let bestBikes = bikesBest.map((eachBest, index) => {
+    let bestBikes = props.homebikes.map((eachBest, index) => {
         if(index<8)
         return(
         <div class="col-3 mt-3 text-center">
@@ -12,9 +11,9 @@ function HomeListing(props){
                 <img src={eachBest.bikeImage} class="card-img-top" alt={eachBest.bikeName} title={eachBest.bikeName} />
                 <div class="card-body">
                     <h5 class="card-title">{eachBest.bikeName}</h5>
-                    <p class="card-text font-weight-bold">Rs. {eachBest.bikePrice}</p>
+                    <p class="card-text font-weight-bold">Per Day: Rs. {eachBest.bikePrice}</p>
                     <p class="card-text">Location: {eachBest.bikeLocation}</p>
-                    <button class="btn btn-danger">Rent This Bike</button>
+                    <Link to={`/allbikes/${eachBest.bikeName}`}><button class="btn btn-danger">Rent This Bike</button></Link>
                 </div>
             </div>
         </div>)});

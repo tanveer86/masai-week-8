@@ -5,6 +5,11 @@ import Header from './components/Header';
 import AddBikes from './components/admin/AddBikes';
 import Home from './components/Home';
 import AllBikes from './components/AllBikes';
+import BikeDetail from './components/BikeDetail';
+import Booking from './components/Booking';
+import Sucess from './components/Success';
+
+let allStorageBikes = JSON.parse(localStorage.getItem('bikes'));
 
 class App extends React.Component{
   constructor(props){
@@ -14,18 +19,17 @@ class App extends React.Component{
     }
   }
 
-  getAllBikes = (e) => {
-    console.log(e)
-  }
-
   render(){
     return (
       <BrowserRouter>
         <Offers />
         
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact render={(props) => {return <Home homebikes={allStorageBikes} {...props} />;}} />
+        <Route path="/allbikes" exact render={props => {return <AllBikes showbikes={allStorageBikes} {...props} />; }} />
+        <Route path="/allbikes/:bikeName" exact render={props => <BikeDetail showbikes={allStorageBikes} {...props} />} />
+        <Route path="/booking" component={Booking} />
+        <Route path="/sucess" component={Sucess} />
         <Route path="/addbikes" component={AddBikes} />
-        <Route path="/allbikes" component={AllBikes} />
         </BrowserRouter>
     );
   }

@@ -4,11 +4,11 @@ import HomeListing from './HomeListing';
 import Homeintro from './HomeIntro';
 import Footer from './Footer';
 
-function Home (){
+function Home (props){
     return(
         <div>
             <Header />
-            <HomeListing />
+            <HomeListing homebikes={props.homebikes}/>
             <Homeintro />
             <Footer />
         </div>
