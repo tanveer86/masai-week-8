@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import Footer from './Footer';
 
 let storageBookings = JSON.parse(localStorage.getItem('bookings'));
 
@@ -79,7 +81,7 @@ class Booking extends React.Component{
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" class="btn btn-danger btn-lg btn-block font-weight-bolder">Book Now</button>
+                               <Link to="/sucess"><button type="submit" class="btn btn-danger btn-lg btn-block font-weight-bolder">Book Now</button></Link>
                             </form>
                         </div>
                         <div class="col-md-3 pt-5">
@@ -93,6 +95,7 @@ class Booking extends React.Component{
                         </div>
                     </div>
                 </div>
+                <Footer />
             </React.Fragment>
         )
     }

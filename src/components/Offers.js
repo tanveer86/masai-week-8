@@ -3,8 +3,12 @@ import styles from './style.module.css'
 
 function Offers(){
     return(
-        <div className={styles.offerdiv}>
-            <p>Use this is coupon code <b>NEWUSER60</b> to Get 60% off on your first booking!</p>
+        <div class="container-fluid bg-success">
+            <div class="row">
+                <div class="col-12 text-center text-white">
+                    <p class="mt-3">Use Coupon Code <b>NEWUSER60</b> to Get 40% Off on Your First Booking!</p>
+                </div>
+            </div>
         </div>
     )
 }

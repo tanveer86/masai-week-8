@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Link, BrowserRouter } from "react-router-dom";
+import Footer from './Footer';
 
 function AllBikes(props){
 
@@ -29,6 +30,7 @@ function AllBikes(props){
                     {showAllBikes}
                 </div>
             </div>
+            <Footer />
         </React.Fragment>
     )
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import Homeintro from './HomeIntro';
+import Footer from './Footer';
 
 function BikeDetail(props){
     console.log(props)
@@ -28,7 +29,7 @@ function BikeDetail(props){
                         </div>
                     </div>
                 </div>
-                
+                <Footer />
             </React.Fragment>
         )
     }else{
