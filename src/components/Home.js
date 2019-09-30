@@ -3,10 +3,12 @@ import Header from './Header';
 import HomeListing from './HomeListing';
 import Homeintro from './HomeIntro';
 import Footer from './Footer';
+import Offers from './Offers';
 
 function Home (props){
     return(
         <div>
+            <Offers />
             <Header />
             <HomeListing homebikes={props.homebikes}/>
             <Homeintro />

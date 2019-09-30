@@ -1,6 +1,8 @@
 import React from 'react';
+import AdminMenu from './AdminMenu';
 
-let AllBikes = []
+let storageBikes = JSON.parse(localStorage.getItem('bikes'));
+let AllBikes = [...storageBikes]
 
 class AddBikes extends React.Component{
     constructor(){
@@ -43,11 +45,13 @@ class AddBikes extends React.Component{
 
         return(
             <React.Fragment>
-            <div class="container">
+            <AdminMenu />
+            <div class="container mt-5">
                 <div class="row">
                     <div class="col-12">
+                        <h1 class="text-center">Enter Below Details to Add a New Bike</h1>
                         <form onSubmit={this.inputSubmit}>
-                            <div class="row">
+                            <div class="row mt-5">
                                 <div class="col-6">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Bike Name</label>

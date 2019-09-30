@@ -4,6 +4,8 @@ import Footer from './Footer';
 import Menu from './Menu';
 
 let storageBookings = JSON.parse(localStorage.getItem('bookings'));
+let selectedBikes = JSON.parse(localStorage.getItem('selectedBike'));
+let todayDate = new Date().toDateString();
 
 let allBookings = [...storageBookings];
 
@@ -18,9 +20,10 @@ class Booking extends React.Component{
             customerDrop: '',
             customerPay: '',
             customerMessage: '',
-            customerBikeName: '',
-            customerBikePrice: '',
-            customerBikePickup: ''
+            customerBikeName: selectedBikes.bikeName,
+            customerBikePrice: selectedBikes.bikePrice,
+            customerBikePickup: selectedBikes.bikeLocation,
+            customerBookDate: todayDate,
         }
     }
 
@@ -32,6 +35,7 @@ class Booking extends React.Component{
         event.preventDefault();
         allBookings.push(this.state)
         localStorage.setItem('bookings',JSON.stringify(allBookings));
+        this.props.history.push('/sucess')
     }
 
     render(){
@@ -83,7 +87,7 @@ class Booking extends React.Component{
                                         </div>
                                     </div>
                                 </div>
-                               <Link to="/sucess"><button type="submit" class="btn btn-danger btn-lg btn-block font-weight-bolder">Book Now</button></Link>
+                                <button type="submit" class="btn btn-danger btn-lg btn-block font-weight-bolder">Book Now</button>
                             </form>
                         </div>
                         <div class="col-md-3 pt-5">

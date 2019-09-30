@@ -5,11 +5,10 @@ import Menu from './Menu';
 let selectedBike = JSON.parse(localStorage.getItem('selectedBike'));
 let storageBookings = JSON.parse(localStorage.getItem('bookings'));
 let todayDate = new Date().toDateString();
-
-console.log(storageBookings.length)
+let lastBooking = storageBookings.length-1
 
 let customerDetails = storageBookings.map((eachCustomer, index) => {
-    if(index == 0)
+    if(index == lastBooking)
     return(
         <div>
             <h5>Your Details</h5>
