@@ -9,8 +9,9 @@ function Header(){
                 <div className={styles.homenavbar}>
                     <Link to="/" className={styles.homelink}>Home</Link>
                     <Link to="/allbikes" className={styles.homelink}>Rent a Bike</Link>
-                    <Link className={styles.homelink}>My Account</Link>
-                    <Link className={styles.homelink}>Contact Us</Link>
+                    <Link to="/allbikes" className={styles.homelink}>How it Works</Link>
+                    <Link to="/allbikes" className={styles.homelink}>My Bookings</Link>
+                    <Link to="/allbikes" className={styles.homelink}>Contact Us</Link>
                 </div>
                 <div className={styles.headerIntro}>
                     <div className={styles.headerIntroImage}>

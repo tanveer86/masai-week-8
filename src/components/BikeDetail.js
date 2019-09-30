@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom';
 import Homeintro from './HomeIntro';
 import Footer from './Footer';
+import Menu from './Menu';
 
 function BikeDetail(props){
     console.log(props)
@@ -12,7 +13,15 @@ function BikeDetail(props){
     if(getBike){
         return(
             <React.Fragment>
-                <div class="card mb-3">
+                <Menu />
+                <div class="container mt-5">
+                    <div class="row">
+                        <div class="col-12">
+                            <h1 class="text-center">Details of Your Selected Bike</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3 mt-5">
                     <div class="row no-gutters">
                         <div class="col-md-3 mt-5">
                         <img src={getBike.bikeImage} class="card-img" alt={getBike.bikeName} title={getBike.bikeName} />
@@ -24,7 +33,7 @@ function BikeDetail(props){
                             <p class="card-text">Current Location: {getBike.bikeLocation}</p>
                             <p class="card-text">Vehicle Details: {getBike.bikeDetails}</p>
                             <p class="card-text text-danger font-weight-bold">Per Day: Rs. {getBike.bikePrice}</p>
-                            <Link to="/booking"><button class="btn btn-danger">Rent Now</button></Link>
+                            <Link to="/booking"><button class="btn btn-danger font-weight-bolder">Rent Now</button></Link>
                         </div>
                         </div>
                     </div>

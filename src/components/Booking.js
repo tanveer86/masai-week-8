@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import Footer from './Footer';
+import Menu from './Menu';
 
 let storageBookings = JSON.parse(localStorage.getItem('bookings'));
 
@@ -37,6 +38,7 @@ class Booking extends React.Component{
         let selectedBike = JSON.parse(localStorage.getItem('selectedBike'));
         return(
             <React.Fragment>
+                <Menu />
                 <div class="card mb-3">
                     <div class="row no-gutters">
                         <div class="col-md-9 p-5">

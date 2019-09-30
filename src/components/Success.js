@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from './Footer';
+import Menu from './Menu';
 
 let selectedBike = JSON.parse(localStorage.getItem('selectedBike'));
 let storageBookings = JSON.parse(localStorage.getItem('bookings'));
@@ -23,6 +24,7 @@ function Sucess(){
 
     return(
         <React.Fragment>
+            <Menu />
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center mt-5">
@@ -32,7 +34,6 @@ function Sucess(){
 
                     </div>
                 </div>
-
             </div>
             <div class="card mb-3 mt-5">
                 <div class="row no-gutters">

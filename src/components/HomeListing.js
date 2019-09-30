@@ -13,7 +13,7 @@ function HomeListing(props){
                     <h5 class="card-title">{eachBest.bikeName}</h5>
                     <p class="card-text font-weight-bold">Per Day: Rs. {eachBest.bikePrice}</p>
                     <p class="card-text">Location: {eachBest.bikeLocation}</p>
-                    <Link to={`/allbikes/${eachBest.bikeName}`}><button class="btn btn-danger">Rent This Bike</button></Link>
+                    <Link to={`/allbikes/${eachBest.bikeName}`}><button class="btn btn-danger font-weight-bolder">Rent This Bike</button></Link>
                 </div>
             </div>
         </div>)});
@@ -23,7 +23,7 @@ function HomeListing(props){
             <div class="container p-3">
                 <div class="row">
                     <div class="col-12">
-                        <h1 class="text-center">Gadi on Rent in Bangalore Now</h1>
+                        <h1 class="text-center">GadiOnRent.com in Bangalore Now</h1>
                     </div>
                 </div>
                 <div class="row">
